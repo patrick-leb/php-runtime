@@ -83,13 +83,13 @@ RUN mkdir -p ${BUILD_DIR}  \
 #   - php
 # Used By:
 #   - xml2
-ENV VERSION_ZLIB=1.2.11
+ENV VERSION_ZLIB=1.2.12
 ENV ZLIB_BUILD_DIR=${BUILD_DIR}/xml2
 
 RUN set -xe; \
     mkdir -p ${ZLIB_BUILD_DIR}; \
 # Download and upack the source code
-    curl -Ls  http://zlib.net/zlib-${VERSION_ZLIB}.tar.xz \
+    curl -Ls  http://zlib.net/zlib-${VERSION_ZLIB}.tar.gz \
   | tar xJC ${ZLIB_BUILD_DIR} --strip-components=1
 
 # Move into the unpackaged code directory
