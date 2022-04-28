@@ -18,7 +18,7 @@ publish-images: publish-php-80
 
 publish-php%: build-images
 	PHP_VERSION=$$(echo $@ | cut -d'.' -f 1 | cut -d'-' -f 2,3); \
-    docker image tag ymir/runtime/$$PHP_VERSION:latest woogostores/php-runtime:$$PHP_VERSION; \
+    docker image tag woogostores/runtime/$$PHP_VERSION:latest woogostores/php-runtime:$$PHP_VERSION; \
     docker image push woogostores/php-runtime:$$PHP_VERSION
 
 layer-versions:
