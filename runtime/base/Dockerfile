@@ -254,6 +254,12 @@ RUN set -xe; \
     --enable-file \
     --enable-proxy  \
     --enable-tftp \
+    --with-freetype \
+    --enable-gd \
+    --with-jpeg \
+    --with-png \
+    --with-webp \
+    --with-xpm \
     --enable-ipv6 \
     --enable-openssl-auto-load-config \
     --enable-cookies \
