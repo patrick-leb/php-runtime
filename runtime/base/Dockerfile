@@ -90,7 +90,7 @@ RUN set -xe; \
     mkdir -p ${ZLIB_BUILD_DIR}; \
 # Download and upack the source code
     curl -Ls  http://zlib.net/zlib-${VERSION_ZLIB}.tar.gz \
-  | tar xJC ${ZLIB_BUILD_DIR} --strip-components=1
+  | tar xzC ${ZLIB_BUILD_DIR} --strip-components=1
 
 # Move into the unpackaged code directory
 WORKDIR  ${ZLIB_BUILD_DIR}/
