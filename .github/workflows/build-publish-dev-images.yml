@@ -1,9 +1,8 @@
 name: Build and publish development images
 
 on:
-  push:
-    paths-ignore:
-      - 'tests/**'
+  workflow_dispatch:
+
 
 jobs:
   publish:

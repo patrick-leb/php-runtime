@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 use Ymir\Runtime\Runtime;
 
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
+ini_set('display_errors', '0');
+error_reporting(E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR);
 
 fwrite(STDERR, 'Cold start'.PHP_EOL);
 

@@ -1,9 +1,7 @@
 name: Build and publish images for tag
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
 
 jobs:
   publish:

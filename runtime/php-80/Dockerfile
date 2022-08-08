@@ -1,4 +1,4 @@
-FROM ymir/runtime/base as php-build
+FROM woogo/runtime/base as php-build
 
 ###############################################################################
 # Oniguruma
@@ -24,6 +24,16 @@ RUN set -xe; \
 
 ENV VERSION_PHP=8.0.27
 
+# Install required build libraries
+RUN set -ue \
+    ; LD_LIBRARY_PATH= \
+    ; yum -y install \
+    libwebp-devel \
+    libXpm-devel \
+    libpng-devel \
+    libjpeg-devel \
+    freetype-devel \
+    ;
 
 ENV PHP_BUILD_DIR=${BUILD_DIR}/php
 RUN set -xe; \
@@ -84,7 +94,13 @@ RUN set -xe \
         --enable-intl=shared \
         --enable-soap \
         --with-xsl=${INSTALL_DIR} \
-        --with-pear
+        --with-pear \
+        --with-freetype \
+        --enable-gd \
+        --with-jpeg \
+        --with-webp \
+        --with-xpm
+
 RUN make -j $(nproc)
 # Run `make install` and override PEAR's PHAR URL because pear.php.net is down
 RUN set -xe; \
