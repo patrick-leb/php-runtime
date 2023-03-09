@@ -13,8 +13,19 @@ declare(strict_types=1);
 
 use Ymir\Runtime\Runtime;
 
-ini_set('display_errors', '0');
-error_reporting(E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR);
+declare(strict_types=1);
+
+/*
+ * This file is part of Ymir PHP Runtime.
+ *
+ * (c) Carl Alexander <support@ymirapp.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
 
 fwrite(STDERR, 'Cold start'.PHP_EOL);
 

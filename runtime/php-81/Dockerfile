@@ -113,6 +113,8 @@ RUN pecl install APCu
 RUN pecl install igbinary
 RUN pecl install msgpack
 RUN pecl install zstd
+RUN pecl install xhprof
+
 
 # Build extensions
 WORKDIR ${IMAGICK_BUILD_DIR}
